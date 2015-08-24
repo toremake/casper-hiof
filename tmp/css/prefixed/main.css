@@ -1,0 +1,249 @@
+/*!
+  Theme Name:       Casper Hiof
+  Theme URI:        https://github.com/hiof/casper-hiof
+  Author:           Kenneth Dahlstrøm
+  Author URI:       http://keda.no
+  Description:      Casper Hiof Theme
+  Version:          1.0.0
+  Template:         casper
+  Usage: Copy the casper-hiof folder into your wp-content/themes/ directory and activate it in the dashboard.
+*/
+html {
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+#body {
+  font-size: 1.8rem;
+  line-height: 1.8em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+dt,
+dd {
+  display: inline-block;
+  float: left;
+}
+dt {
+  clear: left;
+  margin-right: .5rem;
+  font-weight: bold;
+}
+dt:after {
+  content: ": ";
+}
+a {
+  transition: .1s color;
+  color: #0c89db;
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+  color: #212121;
+  text-decoration: none;
+}
+p {
+  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  margin-bottom: 2rem;
+}
+p.intro {
+  font-size: 130%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -ms-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  font-style: normal;
+  font-weight: 700;
+}
+h1,
+.alpha {
+  line-height: 3rem;
+  font-size: 2.8rem;
+}
+h2,
+.beta {
+  font-size: 2.2rem;
+}
+h3,
+.gamma {
+  font-size: 1.8rem;
+}
+h4,
+.delta {
+  font-size: 1.6rem;
+}
+h5,
+.epsilon {
+  font-size: 1.6rem;
+}
+h1 + p,
+h1 + ol,
+h1 + ul,
+h1 + dl,
+h1 + blockquote p,
+h1 + pre,
+.alpha + p,
+.alpha + ol,
+.alpha + ul,
+.alpha + blockquote p,
+.alpha + pre,
+h2 + p,
+h2 + ol,
+h2 + ul,
+h2 + dl,
+h2 + blockquote p,
+h2 + pre,
+.beta + p,
+.beta + ol,
+.beta + ul,
+.beta + blockquote p,
+.beta + pre,
+img + p,
+img + ol,
+img + ul,
+img + blockquote p,
+img + pre,
+#sidebar header + * {
+  margin-top: 2rem;
+}
+form {
+  margin-bottom: 2rem;
+}
+section > .container > :first-child {
+  padding-top: 0;
+}
+ul,
+ol {
+  margin-bottom: 2rem;
+}
+ul li,
+ol li {
+  -ms-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -o-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  margin-left: 2.4rem;
+}
+b,
+strong,
+.bold {
+  font-weight: 600;
+}
+em,
+i,
+.italic {
+  font-style: italic;
+}
+small,
+.caption {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
+}
+abbr {
+  border-bottom: 1px dotted black;
+}
+abbr:hover {
+  cursor: help;
+}
+h1 + .caption,
+.alpha + .caption,
+h2 + .caption,
+.beta + .caption,
+h3 + .caption,
+.gamma + .caption,
+img + .caption {
+  margin-top: 0;
+}
+blockquote p {
+  font-style: italic;
+  padding-left: 2rem;
+  border-left: 0.5rem solid;
+}
+blockquote footer {
+  display: inline-block;
+  margin-left: 1rem;
+}
+blockquote footer p {
+  border: none;
+}
+blockquote footer p:before {
+  content: "-";
+  margin-right: 1rem;
+  display: inline-block;
+}
+hr {
+  color: #c9c9c9;
+  background-color: #c9c9c9;
+  border: 0;
+  border-bottom: 1px solid #c9c9c9;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+code,
+pre {
+  background-color: #002028;
+  color: #ffffff;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+pre {
+  border-radius: 0.5rem;
+  display: block;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+pre code {
+  font-size: 1.4rem;
+}
+.upper {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.admissionUpdateTime {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-style: italic;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.blog-description,
+.blog-title,
+.post-title,
+.post-meta,
+.widget-area {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+h1 {
+  letter-spacing: 0;
+}
