@@ -39,4 +39,6 @@ secret.json
 # NODE STUFF #
 node_modules
 # Bower STUFF #
-app/vendor
+vendor
+tmp
+build
