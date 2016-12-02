@@ -43,12 +43,22 @@ Install [Node.js](http://nodejs.org)) if it's not already installed on your comp
     $ npm install
     $ bower install
 
+### Development
+
+While working on this theme we recommend [vccw](http://vccw.cc) as a local development environment. Rename the downloaded project folder to `vw`. The continuous-build configuration in this project require that the `vw` folder is a sibling to the parent directory of this project.
+
+This project require the [Casper template](https://github.com/hiof/casper) to be downloaded and installed in the wordpress `themes` folder.
+
+The following command is available within the project folder to continuously watch for changes within the /app/ folder and deploy changes to `../vw/wordpress/wp-content/themes/` directory.
+
+- `$ grunt watch`
+
+
 ### Build
 
 The following commands are now available within the project folder `$ grunt build`.
 
 - $ grunt build: Builds the code to /dist folder ready for deploy
-
 
 ### Deploy
 

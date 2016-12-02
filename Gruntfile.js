@@ -72,6 +72,13 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'dist/',
         filter: 'isFile'
+      },
+      vw:{
+        expand: true,
+        cwd: 'dist/',
+        src: '**',
+        dest: '../vw/wordpress/wp-content/themes/',
+        filter: 'isFile'
       }
     },
 
@@ -79,6 +86,15 @@ module.exports = function(grunt) {
       dist: ['dist/**/*'],
       temp: ['tmp/**/*'],
       build: ['build/**/*']
+    },
+    watch: {
+      scripts: {
+        files: ['app/**/*'],
+        tasks: ['vw'],
+        options: {
+          spawn: false,
+        },
+      },
     },
 
 
@@ -88,7 +104,7 @@ module.exports = function(grunt) {
     sftp: {
       stage: {
         files: {
-           "./": "deploy/assets/**"
+          "./": "deploy/assets/**"
         },
         options: {
           path: '<%= secret.prod.path %>',
@@ -103,7 +119,7 @@ module.exports = function(grunt) {
       },
       prod: {
         files: {
-           "./": "deploy/assets/**"
+          "./": "deploy/assets/**"
         },
         options: {
           path: '<%= secret.prod.path %>',
@@ -125,9 +141,11 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('subtaskCss', ['sass', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('build', ['clean', 'subtaskCss', 'copy']);
+  grunt.registerTask('copyProject', ['copy:php', 'copy:wpFiles', 'copy:dist']);
+  grunt.registerTask('build', ['clean', 'subtaskCss', 'copyProject']);
 
 
+  grunt.registerTask('vw', ['build', 'copy:vw']);
 
   // grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
 
