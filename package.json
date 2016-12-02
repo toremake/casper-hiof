@@ -1,6 +1,6 @@
 {
   "name": "casper-hiof",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": "HiØ ved Kenneth Lindbeck-Dahlstrøm <kld@hiof.no>",
   "description": "Casper Hiof Theme",
   "repository": {
@@ -24,8 +24,9 @@
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-cssmin": "^0.9.0",
-    "grunt-shell": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^1.2.1",
+    "grunt-shell": "^2.0.0",
     "grunt-ssh": "^0.11.1",
     "matchdep": "*",
     "time-grunt": "^0.3.1"
