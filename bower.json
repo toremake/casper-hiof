@@ -10,5 +10,8 @@
     "hiof-frontend": "https://github.com/hiof/frontend.git",
     "hiof-typography": "https://github.com/hiof/typography.git",
     "sass-mq": "^3.3.1"
-  }
+  },
+  "ignoredDependencies": [
+    "livereload"
+  ]
 }
