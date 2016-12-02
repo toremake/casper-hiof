@@ -6,12 +6,8 @@
   ],
   "description": "Hiof child theme of the Casper theme",
   "license": "PL-3.0",
-  "dependencies": {
-    "hiof-frontend": "https://github.com/hiof/frontend.git",
+  "devDependencies": {
     "hiof-typography": "https://github.com/hiof/typography.git",
     "sass-mq": "^3.3.1"
-  },
-  "ignoredDependencies": [
-    "livereload"
-  ]
+  }
 }
