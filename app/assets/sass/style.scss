@@ -47,3 +47,12 @@ h1{
     border-bottom: 0 !important;
   }
 }
+
+.post-content img {
+	padding: 0px; //Removing internal padding on images in content, making them align to text
+}
+
+.widget-area aside {
+	height: auto; //Removing fixed height (300px) on widgets
+}
+
