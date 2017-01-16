@@ -15,26 +15,14 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     // Tasks
-    lesslint:{
-      src: ['app/assets/less/*.less'],
-      options:{
-        csslint:{
-          'known-properties': false
-        }
-      }
-    },
-    less: {
-      standard: {
-        options: {
+    sass: {
+      options: {
 
-        },
-        files: [{
-          expand: true,
-          cwd: 'app/assets/less/',
-          src: ['*.less'],
-          dest: 'tmp/css/',
-          ext: '.css'
-        }]
+      },
+      dist: {
+        files: {
+          'tmp/css/style.css': 'app/assets/sass/style.scss',
+        }
       }
     },
     autoprefixer: {
@@ -50,19 +38,19 @@ module.exports = function(grunt) {
         dest: 'build/casper-hiof'
       }
     },
-    //cssmin: {
-    //  main: {
-    //    options: {
-    //      keepSpecialComments: '*'
-    //      //banner: '/*!  HiØ casper-stylesheet v<%= pkg.version %> by Kenneth Dahlstrøm<kenneth.dahlstrom@hiof.no> */'
-    //    },
-    //    expand: true,
-    //    cwd: 'tmp/css/prefixed/',
-    //    src: ['*.css', '!*.min.css'],
-    //    dest: 'build/casper-hiof',
-    //    ext: '.css'
-    //  }
-    //},
+    cssmin: {
+      main: {
+        options: {
+          keepSpecialComments: '*',
+          banner: '/*! \n Theme Name: Casper Hiof \n Theme URI: <%= pkg.homepage %> \n Author: <%= pkg.author %> \n Author URI: http://hiof.no \n Description: <%= pkg.description %>  \n Version: <%= pkg.version %> \n Template: casper \n Usage: Copy the casper-hiof folder into your wp-content/themes/ directory and activate it in the dashboard. \n */'
+        },
+        expand: true,
+        cwd: 'build/casper-hiof',
+        src: ['*.css', '!*.min.css'],
+        dest: 'build/casper-hiof',
+        ext: '.css'
+      }
+    },
     copy: {
       php:{
         expand: true,
@@ -84,12 +72,29 @@ module.exports = function(grunt) {
         src: '**',
         dest: 'dist/',
         filter: 'isFile'
+      },
+      vw:{
+        expand: true,
+        cwd: 'dist/',
+        src: '**',
+        dest: '../vw/wordpress/wp-content/themes/',
+        filter: 'isFile'
       }
     },
 
     clean: {
       dist: ['dist/**/*'],
+      temp: ['tmp/**/*'],
       build: ['build/**/*']
+    },
+    watch: {
+      scripts: {
+        files: ['app/**/*'],
+        tasks: ['vw'],
+        options: {
+          spawn: false,
+        },
+      },
     },
 
 
@@ -99,7 +104,7 @@ module.exports = function(grunt) {
     sftp: {
       stage: {
         files: {
-           "./": "deploy/assets/**"
+          "./": "deploy/assets/**"
         },
         options: {
           path: '<%= secret.prod.path %>',
@@ -114,7 +119,7 @@ module.exports = function(grunt) {
       },
       prod: {
         files: {
-           "./": "deploy/assets/**"
+          "./": "deploy/assets/**"
         },
         options: {
           path: '<%= secret.prod.path %>',
@@ -135,10 +140,12 @@ module.exports = function(grunt) {
   // Tasks
 
   // Register tasks
-  grunt.registerTask('subtaskCss', ['less', 'autoprefixer']);
-  grunt.registerTask('build', ['clean', 'subtaskCss', 'copy']);
+  grunt.registerTask('subtaskCss', ['sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('copyProject', ['copy:php', 'copy:wpFiles', 'copy:dist']);
+  grunt.registerTask('build', ['clean', 'subtaskCss', 'copyProject']);
 
 
+  grunt.registerTask('vw', ['build', 'copy:vw']);
 
   // grunt.registerTask('dist', ['clean:build', 'subtaskCss', 'subtaskJs', 'versioning:dist', 'subtaskCopy', 'subtaskViews', 'clean:dist', 'copy:dist']);
 

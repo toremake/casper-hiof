@@ -1,0 +1,49 @@
+.byline, .updated{
+  display: inline;
+}
+
+//@import "../../../vendor/hiof-frontend/app/assets/sass/variables/_standard";
+@import "../../../vendor/hiof-typography/dist/typography";
+
+
+body, h1,h2,h3,h4,h5,h6, .blog-description, .blog-title, .post-title, .post-meta, .widget-area{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1{
+  letter-spacing: 0;
+}
+.blog-logo{
+  line-height: 1;
+}
+
+.main-navigation a {
+  background-color: rgba(0,0,0,.6);
+  margin-left: 10px;
+  padding: 6px 20px;
+  border-radius: 2px;
+}
+.post-content ul, .post-content ol{
+  margin-left: 0;
+  padding-left: 10px;
+}
+.site-head{
+  max-height: 370px;
+}
+.menu-toggle{
+  right: 10px;
+  width: 58px !important;
+}
+.icon-bars{
+  margin-left: 0 !important;
+}
+.main-navigation{
+  li{
+    margin-left: 0;
+  }
+}
+.post-title{
+  a{
+    border-bottom: 0 !important;
+  }
+}

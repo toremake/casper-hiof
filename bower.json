@@ -1,13 +1,27 @@
 {
   "name": "casper-hiof",
-  "version": "1.0.0",
   "homepage": "https://github.com/hiof/casper-hiof",
   "authors": [
     "HiØ ved Kenneth Dahlstrøm <kenneth.dahlstrom@hiof.no>"
   ],
   "description": "Hiof child theme of the Casper theme",
-  "license": "GNU",
-  "dependencies": {
-    "hiof-frontend": "https://github.com/hiof/frontend.git"
-  }
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "hiof-typography": "https://github.com/hiof/typography.git",
+    "sass-mq": "^3.3.1"
+  },
+  "overrides": {
+    "hiof-frontend": {
+      "dependencies": {}
+    },
+    "hiof-typography": {
+      "dependencies": {}
+    },
+    "sass-mq": {
+      "dependencies": {}
+    }
+  },
+  "ignoredDependencies": [
+    "hiof-typography"
+  ]
 }
